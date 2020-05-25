@@ -30,7 +30,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a type="button" role="button" id="loginButton">
                         <span class="fa fa-sign-in"></span> Login
                     </a>
                 </span>
@@ -129,14 +129,14 @@
                         </div>
                         <div class="form-group row">
                             <label for="smokingSection" class="col-12 col-sm-2 col-form-label">Section</label>
-                            <div class="btn-group btn-group-toggle col" data-toggle="buttons">
-                                <label class="btn btn-secondary active bg-danger">
+                            <div class="btn-group btn-group-toggle col-12 col-sm-auto" data-toggle="buttons">
+                                <label class="btn btn-secondary btn-sm active bg-danger">
                                   <input type="radio" name="smokingSection" id="option1" autocomplete="off" checked>Non-Smoking
                                 </label>
-                                <label class="btn btn-secondary bg-success">
+                                <label class="btn btn-secondary btn-sm bg-success">
                                   <input type="radio" name="smokingSection" id="option2" autocomplete="off">Smoking
                                 </label>
-                              </div>
+                            </div>
                         </div>
                         <div class="form-group row">
                             <label for="dateandtime" class="col-12 col-sm-2 col-form-label">Date and Time</label>
@@ -175,8 +175,11 @@
                         data-placement="bottom" href="#reserveTable"><strong>Reserve Table</strong>
                     </a>-->
                     <span class="navbar-text">
-                        <a role="button" class="btn btn-block btn-md nav-link btn-warning"
+                        <!--<a role="button" class="btn btn-block btn-md nav-link btn-warning"
                             data-toggle="modal" data-target="#reserveTable"><strong>Reserve Table</strong>
+                        </a>-->
+                        <a role="button" class="btn btn-block btn-md nav-link btn-warning"
+                            id="reserveButton"><strong>Reserve Table</strong>
                         </a>
                     </span>
                 </div>
@@ -429,7 +432,12 @@
                     $("#carouselButton").children("span").addClass('fa-pause');
                 }
             });
-            
+            $("#reserveButton").click(function(){
+                $("#reserveTable").modal('show');
+            });
+            $("#loginButton").click(function(){
+                $("#loginModal").modal('show');
+            });
         })
     </script>
 </body>
